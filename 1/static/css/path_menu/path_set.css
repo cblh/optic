@@ -1,0 +1,611 @@
+p,hr,pre,blockquote,ol,ul,li,dl,dt,dd,a,em,strong,small,s,cite,q,dfn,abbr,time,code,var,i,b,u,span,br,h1,h3,h4,h5,h6 {
+  padding: 0;
+  margin: 0;
+}
+/* :root {
+  padding: 60px;
+  font-family: Helvetica, 'Hiragino Sans GB', Arial, sans-serif;
+  font-smoothing: antialiased;
+  background: #f9f4f0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.testfield {
+  width: 210px;
+  margin: 0 auto;
+}
+h1 {
+  padding: 7px 10px;
+  margin: 20px 0 10px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: rgba(109, 73, 42, 0.8);
+  text-shadow: #fff 0 1px 1px;
+  background: #f1e7de;
+  border: 1px solid #d3bfae;
+  border-radius: 3px;
+  box-shadow: inset #fff 0 1px 0 0;
+}
+h1 a {
+  color: #6d492a;
+  text-decoration: none;
+  border-bottom: 1px dotted #d3bfae;
+}
+h1 a:hover {
+  border-color: #6d492a;
+}
+ */
+ 
+.flyout-wrap {
+  position: relative;
+  height: 191px;
+}
+.flyout-wrap .flyout {
+  position: relative;
+  margin: 0 0 1px 6px;
+  line-height: 0;
+}
+.flyout-wrap .flyout > li {
+  position: absolute;
+  display: block;
+  height: 170px;
+  background: yellow;
+  transform-origin: 12.5px bottom;
+}
+
+/* nth-of-type 表第n个元素 飞出位置角度*/
+.flyout-wrap .flyout > li:nth-of-type( 1) {
+  transform: rotate(0deg);
+}
+.flyout-wrap .flyout > li:nth-of-type( 2) {
+  transform: rotate(30deg);
+}
+.flyout-wrap .flyout > li:nth-of-type( 3) {
+  transform: rotate(60deg);
+}
+.flyout-wrap .flyout > li:nth-of-type( 4) {
+  transform: rotate(90deg);
+}
+/* .flyout-wrap .flyout > li:nth-of-type( 5) {
+  transform: rotate(72deg);
+}
+.flyout-wrap .flyout > li:nth-of-type( 6) {
+  transform: rotate(90deg);
+} */
+
+.flyout-wrap .flyout > li a {
+  position: absolute;
+  display: block;
+  width: 26px;
+  height: 26px;
+  overflow: hidden;
+  text-indent: -99999px;
+  background: #444;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px 0, rgba(0, 0, 0, 0.2) 0 0 0 1px, inset rgba(0, 0, 0, 0.5) 0 0 2px 0;
+}
+.flyout-wrap .flyout > li a:active {
+  background: #000;
+  border-color: #555;
+}
+.flyout-wrap .flyout > li a:active span {
+  opacity: .3;
+}
+/*菜单样式*/
+.flyout-wrap .flyout > li a span {
+  display: block;
+  width: 26px;
+  height: 26px;
+  /* background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px'><path fill='#fff' d='M11.045,9.879l1.906,6.114l-4.949-3.791L3.059,16l1.9-6.117L0,6.114l6.123,0.013L7.998,0l1.879,6.12L16,6.104L11.045,9.879z'/></svg>") no-repeat center center; */
+  background-size: 16px 16px;
+}
+.flyout-wrap .flyout > li:nth-of-type( 1) a span {
+	/* background: url("data:image/svg+xml,<svg version='1.0' xmlns='http://www.w3.org/2000/svg' width='16.000000pt' height='16.000000pt' viewBox='0 0 40.000000 40.000000' preserveAspectRatio='xMidYMid meet'>  <g transform='translate(0.000000,40.000000) scale(0.100000,-0.100000)' fill='#FFFFFF' stroke='none'> <path d='M139 341 c-41 -41 -41 -101 0 -142 38 -38 74 -38 112 0 41 41 41 101 0 142 -18 17 -40 29 -56 29 -16 0 -38 -12 -56 -29z'/> <path d='M83 131 c-50 -27 -66 -58 -43 -87 18 -21 292 -21 310 0 40 49 -41 109 -151 112 -55 1 -76 -3 -116 -25z'/> </g> </svg>") no-repeat center center; */
+	background: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPScxLjAnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgd2lkdGg9JzE2LjAwMDAwMHB0JyBoZWlnaHQ9JzE2LjAwMDAwMHB0JyB2aWV3Qm94PScwIDAgNDAuMDAwMDAwIDQwLjAwMDAwMCcgcHJlc2VydmVBc3BlY3RSYXRpbz0neE1pZFlNaWQgbWVldCc+ICA8ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSgwLjAwMDAwMCw0MC4wMDAwMDApIHNjYWxlKDAuMTAwMDAwLC0wLjEwMDAwMCknIGZpbGw9JyNGRkZGRkYnIHN0cm9rZT0nbm9uZSc+IDxwYXRoIGQ9J00xMzkgMzQxIGMtNDEgLTQxIC00MSAtMTAxIDAgLTE0MiAzOCAtMzggNzQgLTM4IDExMiAwIDQxIDQxIDQxIDEwMSAwIDE0MiAtMTggMTcgLTQwIDI5IC01NiAyOSAtMTYgMCAtMzggLTEyIC01NiAtMjl6Jy8+IDxwYXRoIGQ9J004MyAxMzEgYy01MCAtMjcgLTY2IC01OCAtNDMgLTg3IDE4IC0yMSAyOTIgLTIxIDMxMCAwIDQwIDQ5IC00MSAxMDkgLTE1MSAxMTIgLTU1IDEgLTc2IC0zIC0xMTYgLTI1eicvPiA8L2c+IDwvc3ZnPg==" ) no-repeat center center;
+}
+.flyout-wrap .flyout > li:nth-of-type( 2) a span {
+	/* background: url("data:image/svg+xml,<svg version='1.0' xmlns='http://www.w3.org/2000/svg' width='16.000000pt' height='16.000000pt' viewBox='0 0 40.000000 40.000000' preserveAspectRatio='xMidYMid meet'>  <g transform='translate(0.000000,40.000000) scale(0.100000,-0.100000)' fill='#FFFFFF' stroke='none'> <path d='M163 370 c-48 -19 -63 -65 -63 -188 0 -107 1 -114 25 -137 15 -16 36 -25 55 -25 19 0 40 9 55 25 24 23 25 31 25 133 0 93 -3 111 -18 125 -24 22 -45 21 -66 -2 -23 -25 -20 -156 4 -156 12 0 16 15 18 68 2 37 7 67 13 67 6 0 9 -39 7 -101 -3 -84 -6 -104 -20 -113 -13 -8 -23 -8 -35 0 -15 9 -18 29 -21 119 -2 100 -1 110 19 131 28 30 69 31 97 1 17 -18 22 -37 24 -97 2 -59 6 -75 18 -75 22 0 26 134 5 174 -26 51 -88 73 -142 51z'/> </g> </svg> ") no-repeat center center; */
+	background: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPScxLjAnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgd2lkdGg9JzE2LjAwMDAwMHB0JyBoZWlnaHQ9JzE2LjAwMDAwMHB0JyB2aWV3Qm94PScwIDAgNDAuMDAwMDAwIDQwLjAwMDAwMCcgcHJlc2VydmVBc3BlY3RSYXRpbz0neE1pZFlNaWQgbWVldCc+ICA8ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSgwLjAwMDAwMCw0MC4wMDAwMDApIHNjYWxlKDAuMTAwMDAwLC0wLjEwMDAwMCknIGZpbGw9JyNGRkZGRkYnIHN0cm9rZT0nbm9uZSc+IDxwYXRoIGQ9J00xNjMgMzcwIGMtNDggLTE5IC02MyAtNjUgLTYzIC0xODggMCAtMTA3IDEgLTExNCAyNSAtMTM3IDE1IC0xNiAzNiAtMjUgNTUgLTI1IDE5IDAgNDAgOSA1NSAyNSAyNCAyMyAyNSAzMSAyNSAxMzMgMCA5MyAtMyAxMTEgLTE4IDEyNSAtMjQgMjIgLTQ1IDIxIC02NiAtMiAtMjMgLTI1IC0yMCAtMTU2IDQgLTE1NiAxMiAwIDE2IDE1IDE4IDY4IDIgMzcgNyA2NyAxMyA2NyA2IDAgOSAtMzkgNyAtMTAxIC0zIC04NCAtNiAtMTA0IC0yMCAtMTEzIC0xMyAtOCAtMjMgLTggLTM1IDAgLTE1IDkgLTE4IDI5IC0yMSAxMTkgLTIgMTAwIC0xIDExMCAxOSAxMzEgMjggMzAgNjkgMzEgOTcgMSAxNyAtMTggMjIgLTM3IDI0IC05NyAyIC01OSA2IC03NSAxOCAtNzUgMjIgMCAyNiAxMzQgNSAxNzQgLTI2IDUxIC04OCA3MyAtMTQyIDUxeicvPiA8L2c+IDwvc3ZnPg==" ) no-repeat center center;
+}
+.flyout-wrap .flyout > li:nth-of-type( 3) a span {
+	/* background: url("data:image/svg+xml,<svg version='1.0' xmlns='http://www.w3.org/2000/svg' width='16.000000pt' height='16.000000pt' viewBox='0 0 40.000000 40.000000' preserveAspectRatio='xMidYMid meet'>  <g transform='translate(0.000000,40.000000) scale(0.100000,-0.100000)' fill='#00FF00' stroke='none'> <path d='M59 351 c-26 -27 -29 -36 -29 -96 0 -60 3 -69 29 -96 16 -16 39 -29 50 -29 17 0 21 -6 21 -30 0 -18 5 -30 13 -30 7 0 26 13 42 30 24 25 36 30 78 30 40 0 53 5 78 29 26 27 29 36 29 96 0 60 -3 69 -29 96 -29 29 -31 29 -141 29 -110 0 -112 0 -141 -29z'/> </g> </svg>") no-repeat center center; */
+	background: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPScxLjAnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgd2lkdGg9JzE2LjAwMDAwMHB0JyBoZWlnaHQ9JzE2LjAwMDAwMHB0JyB2aWV3Qm94PScwIDAgNDAuMDAwMDAwIDQwLjAwMDAwMCcgcHJlc2VydmVBc3BlY3RSYXRpbz0neE1pZFlNaWQgbWVldCc+ICA8ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSgwLjAwMDAwMCw0MC4wMDAwMDApIHNjYWxlKDAuMTAwMDAwLC0wLjEwMDAwMCknIGZpbGw9JyMwMEZGMDAnIHN0cm9rZT0nbm9uZSc+IDxwYXRoIGQ9J001OSAzNTEgYy0yNiAtMjcgLTI5IC0zNiAtMjkgLTk2IDAgLTYwIDMgLTY5IDI5IC05NiAxNiAtMTYgMzkgLTI5IDUwIC0yOSAxNyAwIDIxIC02IDIxIC0zMCAwIC0xOCA1IC0zMCAxMyAtMzAgNyAwIDI2IDEzIDQyIDMwIDI0IDI1IDM2IDMwIDc4IDMwIDQwIDAgNTMgNSA3OCAyOSAyNiAyNyAyOSAzNiAyOSA5NiAwIDYwIC0zIDY5IC0yOSA5NiAtMjkgMjkgLTMxIDI5IC0xNDEgMjkgLTExMCAwIC0xMTIgMCAtMTQxIC0yOXonLz4gPC9nPiA8L3N2Zz4=" ) no-repeat center center;
+}
+.flyout-wrap .flyout > li:nth-of-type( 4) a span {
+	/* background-image: url(data:image/svg+xml,<svg version='1.0' xmlns='http://www.w3.org/2000/svg' width='16.000000pt' height='16.000000pt' viewBox='0 0 40.000000 40.000000' preserveAspectRatio='xMidYMid meet'>  <g transform='translate(0.000000,40.000000) scale(0.100000,-0.100000)' fill='#FFFFFF' stroke='none'> <path d='M175 369 c-8 -26 -44 -40 -69 -27 -28 15 -52 -12 -37 -41 14 -26 0 -57 -29 -66 -26 -8 -26 -42 0 -50 29 -9 43 -40 29 -66 -16 -31 9 -56 40 -40 26 14 57 0 66 -29 8 -26 42 -26 50 0 9 29 40 43 66 29 31 -16 56 9 40 40 -14 26 0 57 29 66 11 3 20 15 20 25 0 10 -9 22 -20 25 -29 9 -43 40 -29 66 15 29 -9 56 -37 41 -25 -13 -61 1 -69 27 -3 12 -15 21 -25 21 -10 0 -22 -9 -25 -21z'/> </g> </svg> )  or url(4.svg)  no-repeat center center; */
+	background: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPScxLjAnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgd2lkdGg9JzE2LjAwMDAwMHB0JyBoZWlnaHQ9JzE2LjAwMDAwMHB0JyB2aWV3Qm94PScwIDAgNDAuMDAwMDAwIDQwLjAwMDAwMCcgcHJlc2VydmVBc3BlY3RSYXRpbz0neE1pZFlNaWQgbWVldCc+ICA8ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSgwLjAwMDAwMCw0MC4wMDAwMDApIHNjYWxlKDAuMTAwMDAwLC0wLjEwMDAwMCknIGZpbGw9JyNGRkZGRkYnIHN0cm9rZT0nbm9uZSc+IDxwYXRoIGQ9J00xNzUgMzY5IGMtOCAtMjYgLTQ0IC00MCAtNjkgLTI3IC0yOCAxNSAtNTIgLTEyIC0zNyAtNDEgMTQgLTI2IDAgLTU3IC0yOSAtNjYgLTI2IC04IC0yNiAtNDIgMCAtNTAgMjkgLTkgNDMgLTQwIDI5IC02NiAtMTYgLTMxIDkgLTU2IDQwIC00MCAyNiAxNCA1NyAwIDY2IC0yOSA4IC0yNiA0MiAtMjYgNTAgMCA5IDI5IDQwIDQzIDY2IDI5IDMxIC0xNiA1NiA5IDQwIDQwIC0xNCAyNiAwIDU3IDI5IDY2IDExIDMgMjAgMTUgMjAgMjUgMCAxMCAtOSAyMiAtMjAgMjUgLTI5IDkgLTQzIDQwIC0yOSA2NiAxNSAyOSAtOSA1NiAtMzcgNDEgLTI1IC0xMyAtNjEgMSAtNjkgMjcgLTMgMTIgLTE1IDIxIC0yNSAyMSAtMTAgMCAtMjIgLTkgLTI1IC0yMXonLz4gPC9nPiA8L3N2Zz4g" ) no-repeat center center;
+}
+
+.flyout-wrap .flyout-init li {
+  display: none;
+}
+.flyout-wrap .flyout li a {
+  top: 150px;
+  animation: contract 0.35s ease-out 1 backwards;
+}
+.flyout-wrap .flyout.expand li a {
+  top: 50px;/*展开扇形位置 150为底部*/
+  animation: expand .6s ease 1 backwards;
+}
+.flyout-wrap .flyout.fade li a.clicked {
+  top: 10px;
+  animation: clicked 0.5s ease-out 1 forwards;
+}
+.flyout-wrap .flyout.fade li a:not(.clicked) {
+  top: 10px;
+  animation: fade 0.5s ease-out 1 forwards;
+}
+.flyout-wrap .flyout.fade li a:not(.clicked) span {
+  opacity: .1;
+  transition: opacity .5s ease;
+}
+
+/**/
+.flyout-wrap .flyout li:nth-of-type( 1) a {
+  animation-delay: 0.2s;
+}
+.flyout-wrap .flyout li:nth-of-type( 1) a:not(.clicked) span {
+  animation: spin1-contract .9s ease-out 1 backwards; 
+}
+.flyout-wrap .flyout.expand li:nth-of-type( 1) a {
+  animation-delay: 0s;
+}
+/*弹出动画*/
+.flyout-wrap .flyout.expand li:nth-of-type( 1) a span {
+  transform: rotate(0deg);
+  animation: spin1-expand 1.1s/*0.6s*/ ease-out 1 backwards;
+}
+.flyout-wrap .flyout.fade li:nth-of-type( 1) a.clicked span {
+  transform: rotate(0deg);
+}
+/**/
+.flyout-wrap .flyout li:nth-of-type( 2) a {
+  animation-delay: 0.16s;
+}
+.flyout-wrap .flyout li:nth-of-type( 2) a:not(.clicked) span {
+  animation: spin2-contract .9s ease-out 1 backwards;
+}
+.flyout-wrap .flyout.expand li:nth-of-type( 2) a {
+  animation-delay: 0.04s;
+}
+.flyout-wrap .flyout.expand li:nth-of-type( 2) a span {
+  transform: rotate(-18deg);
+  animation: spin2-expand .6s ease-out 1 backwards;
+}
+.flyout-wrap .flyout.fade li:nth-of-type( 2) a.clicked span {
+  transform: rotate(-18deg);
+}
+.flyout-wrap .flyout li:nth-of-type( 3) a {
+  animation-delay: 0.12000000000000001s;
+}
+.flyout-wrap .flyout li:nth-of-type( 3) a:not(.clicked) span {
+  animation: spin3-contract .9s ease-out 1 backwards;
+}
+.flyout-wrap .flyout.expand li:nth-of-type( 3) a {
+  animation-delay: 0.08s;
+}
+.flyout-wrap .flyout.expand li:nth-of-type( 3) a span {
+  transform: rotate(-36deg);
+  animation: spin3-expand .6s ease-out 1 backwards;
+}
+.flyout-wrap .flyout.fade li:nth-of-type( 3) a.clicked span {
+  transform: rotate(-36deg);
+}
+.flyout-wrap .flyout li:nth-of-type( 4) a {
+  animation-delay: 0.08000000000000002s;
+}
+.flyout-wrap .flyout li:nth-of-type( 4) a:not(.clicked) span {
+  animation: spin4-contract .9s ease-out 1 backwards;
+}
+.flyout-wrap .flyout.expand li:nth-of-type( 4) a {
+  animation-delay: 0.12s;
+}
+.flyout-wrap .flyout.expand li:nth-of-type( 4) a span {
+  transform: rotate(-54deg);
+  animation: spin4-expand .6s ease-out 1 backwards;
+}
+.flyout-wrap .flyout.fade li:nth-of-type( 4) a.clicked span {
+  transform: rotate(-54deg);
+}
+/* .flyout-wrap .flyout li:nth-of-type( 5) a {
+  animation-delay: 0.04000000000000001s;
+}
+.flyout-wrap .flyout li:nth-of-type( 5) a:not(.clicked) span {
+  animation: spin5-contract .9s ease-out 1 backwards;
+}
+.flyout-wrap .flyout.expand li:nth-of-type( 5) a {
+  animation-delay: 0.16s;
+}
+.flyout-wrap .flyout.expand li:nth-of-type( 5) a span {
+  transform: rotate(-72deg);
+  animation: spin5-expand .6s ease-out 1 backwards;
+}
+.flyout-wrap .flyout.fade li:nth-of-type( 5) a.clicked span {
+  transform: rotate(-72deg);
+}
+.flyout-wrap .flyout li:nth-of-type( 6) a {
+  animation-delay: 0s;
+}
+.flyout-wrap .flyout li:nth-of-type( 6) a:not(.clicked) span {
+  animation: spin6-contract .9s ease-out 1 backwards;
+}
+.flyout-wrap .flyout.expand li:nth-of-type( 6) a {
+  animation-delay: 0.2s;
+}
+.flyout-wrap .flyout.expand li:nth-of-type( 6) a span {
+  transform: rotate(-90deg);
+  animation: spin6-expand .6s ease-out 1 backwards;
+}
+.flyout-wrap .flyout.fade li:nth-of-type( 6) a.clicked span {
+  transform: rotate(-90deg);
+}
+ */
+
+.flyout-wrap .flyout-btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  width: 36px;
+  height: 36px;
+  overflow: hidden;
+  text-indent: -99999px;
+  background: #f76f54;
+  background: linear-gradient(top, #f76f54 0, #dd3535 49%, #d32121 51%, #c61f1f 100%);
+  border: 4px solid #fff;
+  border-radius: 50%;
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 3px 8px 0, rgba(0, 0, 0, 0.2) 0 0 0 1px, inset rgba(0, 0, 0, 0.3) 0 0 0 1px, inset rgba(255, 255, 255, 0.3) 0 1px 0 1px;
+}
+.flyout-wrap .flyout-btn span {
+  display: block;
+  width: 36px;
+  height: 36px;
+				/*cross*/
+  /* background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='20px'><g><path fill='#fff' d='M20,11.402c0,0.453-0.367,0.82-0.822,0.82H0.82c-0.453,0-0.82-0.367-0.82-0.82V8.598 c0-0.454,0.367-0.821,0.82-0.821h18.357C19.633,7.776,20,8.144,20,8.598V11.402z'/><path fill='#fff' d='M8.598,20c-0.453,0-0.821-0.367-0.821-0.82V0.821c0-0.452,0.368-0.82,0.821-0.82h2.804 c0.453,0,0.82,0.368,0.82,0.82V19.18c0,0.453-0.367,0.82-0.82,0.82H8.598z'/></g></svg>") no-repeat center center; */
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyMHB4JyBoZWlnaHQ9JzIwcHgnPjxnPjxwYXRoIGZpbGw9JyNmZmYnIGQ9J00yMCwxMS40MDJjMCwwLjQ1My0wLjM2NywwLjgyLTAuODIyLDAuODJIMC44MmMtMC40NTMsMC0wLjgyLTAuMzY3LTAuODItMC44MlY4LjU5OCBjMC0wLjQ1NCwwLjM2Ny0wLjgyMSwwLjgyLTAuODIxaDE4LjM1N0MxOS42MzMsNy43NzYsMjAsOC4xNDQsMjAsOC41OThWMTEuNDAyeicvPjxwYXRoIGZpbGw9JyNmZmYnIGQ9J004LjU5OCwyMGMtMC40NTMsMC0wLjgyMS0wLjM2Ny0wLjgyMS0wLjgyVjAuODIxYzAtMC40NTIsMC4zNjgtMC44MiwwLjgyMS0wLjgyaDIuODA0IGMwLjQ1MywwLDAuODIsMC4zNjgsMC44MiwwLjgyVjE5LjE4YzAsMC40NTMtMC4zNjcsMC44Mi0wLjgyLDAuODJIOC41OTh6Jy8+PC9nPjwvc3ZnPg==") no-repeat center center;
+  transition: transform .4s ease; /* 绑定transform变换 */
+}
+/*主按钮动画*//*flyout-wrap下的flyout-btn且btn-rotate，删除类时旋回*/
+.flyout-wrap .flyout-btn.btn-rotate span {
+  transform: rotate(-180deg) scale(1.3);
+}
+
+/* .flyout-wrap .ani-expand 0% {
+  top: 150px;
+}
+.flyout-wrap .ani-expand 50% {
+  top: -10px;
+}
+.flyout-wrap .ani-expand 70% {
+  top: 15px;
+}
+.flyout-wrap .ani-expand 100% {
+  top: 10px;
+} */
+/* .flyout-wrap .ani-contract 0% {
+  top: 10px;
+}
+.flyout-wrap .ani-contract 40% {
+  top: -25px;
+}
+.flyout-wrap .ani-contract 100% {
+  top: 150px;
+}
+.flyout-wrap .ani-clicked 0% {
+  opacity: 1;
+  transform: scale(1);
+}
+.flyout-wrap .ani-clicked 100% {
+  opacity: 0;
+  transform: scale(5);
+} */
+/*菜单弹出收回扇形*/
+@keyframes expand {
+  0% {
+    top: 150px;
+  }
+  50% {
+    top: 30px;
+  }
+  70% {
+    top: 60px;
+  }
+  100% {
+    top: 50px;
+  }
+}
+@keyframes contract {
+  0% {
+    top: 50px;
+  }
+  40% {
+    top: 15px;
+  }
+  100% {
+    top: 150px;
+  }
+}
+/*点击放大其他消失*/
+@keyframes clicked {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    top: 50px;
+  }
+  90% {
+    top: 50px;
+  }
+  99% {
+    transform: scale(2);
+    opacity: 0;
+    top: 150px;
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes fade {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    top: 50px;
+  }
+  90% {
+    opacity: 0;
+    top: 50px;
+  }
+  99% {
+    transform: scale(0);
+    top: 150px;
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+/* .flyout-wrap .ani-spin1-expand 0% {
+  transform: rotate(0deg);
+}
+.flyout-wrap .ani-spin1-expand 60% {
+  transform: rotate(-360deg);
+}
+.flyout-wrap .ani-spin1-expand 100% {
+  transform: rotate(-360deg);
+}
+.flyout-wrap .ani-spin2-expand 0% {
+  transform: rotate(-18deg);
+}
+.flyout-wrap .ani-spin2-expand 60% {
+  transform: rotate(-378deg);
+}
+.flyout-wrap .ani-spin2-expand 100% {
+  transform: rotate(-378deg);
+}
+.flyout-wrap .ani-spin3-expand 0% {
+  transform: rotate(-36deg);
+}
+.flyout-wrap .ani-spin3-expand 60% {
+  transform: rotate(-396deg);
+}
+.flyout-wrap .ani-spin3-expand 100% {
+  transform: rotate(-396deg);
+}
+.flyout-wrap .ani-spin4-expand 0% {
+  transform: rotate(-54deg);
+}
+.flyout-wrap .ani-spin4-expand 60% {
+  transform: rotate(-414deg);
+}
+.flyout-wrap .ani-spin4-expand 100% {
+  transform: rotate(-414deg);
+}
+.flyout-wrap .ani-spin5-expand 0% {
+  transform: rotate(-72deg);
+}
+.flyout-wrap .ani-spin5-expand 60% {
+  transform: rotate(-432deg);
+}
+.flyout-wrap .ani-spin5-expand 100% {
+  transform: rotate(-432deg);
+}
+.flyout-wrap .ani-spin6-expand 0% {
+  transform: rotate(-90deg);
+}
+.flyout-wrap .ani-spin6-expand 60% {
+  transform: rotate(-450deg);
+}
+.flyout-wrap .ani-spin6-expand 100% {
+  transform: rotate(-450deg);
+}
+.flyout-wrap .ani-spin1-contract 0% {
+  transform: rotate(0deg);
+}
+.flyout-wrap .ani-spin1-contract 50% {
+  transform: rotate(360deg);
+}
+.flyout-wrap .ani-spin1-contract 100% {
+  transform: rotate(360deg);
+}
+.flyout-wrap .ani-spin2-contract 0% {
+  transform: rotate(-18deg);
+}
+.flyout-wrap .ani-spin2-contract 50% {
+  transform: rotate(360deg);
+}
+.flyout-wrap .ani-spin2-contract 100% {
+  transform: rotate(360deg);
+}
+.flyout-wrap .ani-spin3-contract 0% {
+  transform: rotate(-36deg);
+}
+.flyout-wrap .ani-spin3-contract 50% {
+  transform: rotate(360deg);
+}
+.flyout-wrap .ani-spin3-contract 100% {
+  transform: rotate(360deg);
+}
+.flyout-wrap .ani-spin4-contract 0% {
+  transform: rotate(-54deg);
+}
+.flyout-wrap .ani-spin4-contract 50% {
+  transform: rotate(360deg);
+}
+.flyout-wrap .ani-spin4-contract 100% {
+  transform: rotate(360deg);
+}
+.flyout-wrap .ani-spin5-contract 0% {
+  transform: rotate(-72deg);
+}
+.flyout-wrap .ani-spin5-contract 50% {
+  transform: rotate(360deg);
+}
+.flyout-wrap .ani-spin5-contract 100% {
+  transform: rotate(360deg);
+}
+.flyout-wrap .ani-spin6-contract 0% {
+  transform: rotate(-90deg);
+}
+.flyout-wrap .ani-spin6-contract 50% {
+  transform: rotate(360deg);
+}
+.flyout-wrap .ani-spin6-contract 100% {
+  transform: rotate(360deg);
+}
+ *//*菜单按钮弹出动画*/
+@keyframes spin1-expand {
+  0% {
+    transform: rotate(0deg);
+  }
+  27% {
+    transform: rotate(-360deg);
+  }
+  73%{
+	transform: rotate(-360deg);
+  }
+  100% {
+    transform: rotate(-720deg);
+  }
+}
+@keyframes spin2-expand {
+  0% {
+    transform: rotate(-18deg);
+  }
+  60% {
+    transform: rotate(-378deg);
+  }
+  100% {
+    transform: rotate(-378deg);
+  }
+}
+@keyframes spin3-expand {
+  0% {
+    transform: rotate(-36deg);
+  }
+  60% {
+    transform: rotate(-396deg);
+  }
+  100% {
+    transform: rotate(-396deg);
+  }
+}
+@keyframes spin4-expand {
+  0% {
+    transform: rotate(-54deg);
+  }
+  60% {
+    transform: rotate(-414deg);
+  }
+  100% {
+    transform: rotate(-414deg);
+  }
+}
+@keyframes spin5-expand {
+  0% {
+    transform: rotate(-72deg);
+  }
+  60% {
+    transform: rotate(-432deg);
+  }
+  100% {
+    transform: rotate(-432deg);
+  }
+}
+@keyframes spin6-expand {
+  0% {
+    transform: rotate(-90deg);
+  }
+  60% {
+    transform: rotate(-450deg);
+  }
+  100% {
+    transform: rotate(-450deg);
+  }
+}
+
+@keyframes spin1-contract {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin2-contract {
+  0% {
+    transform: rotate(-18deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin3-contract {
+  0% {
+    transform: rotate(-36deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin4-contract {
+  0% {
+    transform: rotate(-54deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin5-contract {
+  0% {
+    transform: rotate(-72deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin6-contract {
+  0% {
+    transform: rotate(-90deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

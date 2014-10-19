@@ -1,0 +1,1 @@
+a:2:{i:0;a:6:{s:7:"tree_id";s:2:"23";s:14:"tree_parent_id";s:1:"0";s:9:"tree_name";s:6:"肉类";s:9:"tree_type";s:1:"4";s:12:"tree_orderby";s:1:"3";s:5:"Child";a:0:{}}i:1;a:6:{s:7:"tree_id";s:2:"24";s:14:"tree_parent_id";s:1:"0";s:9:"tree_name";s:6:"水果";s:9:"tree_type";s:1:"4";s:12:"tree_orderby";s:1:"0";s:5:"Child";a:0:{}}}

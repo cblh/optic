@@ -1,0 +1,229 @@
+/* === CSS RESET === */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* === End of CSS RESET === */
+body {
+	background-color: #111111;background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+Cgk8cmVjdCB4PSctMTAlJyB5PSctMTAlJyB3aWR0aD0nMTIwJScgaGVpZ2h0PScxMjAlJyBmaWxsPScjMzAzNDM4Jy8+Cgk8ZWxsaXBzZSBjeD0nNTAlJyBjeT0nNTUlJyByeD0nNDAlJyByeT0nNDAlJyBmaWxsPScjNjY2NjY2Jy8+Cgk8ZWxsaXBzZSBjeD0nNTAlJyBjeT0nNTAlJyByeD0nNDAlJyByeT0nNDAlJyBmaWxsPScjMTExMTExJy8+Cjwvc3ZnPg==');
+	color: white;
+	font-size: 20px;
+	font-family: '微软雅黑',"sans-serif";
+	text-shadow: 
+		1px 1px 0 transparent,
+		2px 2px 0 #101010;
+	overflow: hidden;
+}
+h1 {
+	font-size: 75px;
+	line-height: 1.5em;
+	text-shadow: 
+		2px 2px 0 transparent,
+		4px 4px 0 #202020;
+}
+
+a, a:visited {
+	color: white;
+	text-decoration: none;
+	border-bottom: 2px dotted;
+	transition: color 0.2s;
+}
+
+a:hover {
+	color: #40E0D0;
+}
+
+a:active {
+	color: lightblue;
+}
+
+.big {
+	display: block;
+	font-size: 45px;
+	line-height: 1.3em;
+	margin-bottom: 10px;
+	text-shadow: 
+		2px 2px 0 transparent,
+		4px 4px 0 #101010;
+}
+
+.help{
+	display: block;
+		font-size: 30px;
+		line-height: 1.1em;
+		margin-bottom: 10px;
+		text-shadow: 
+			2px 2px 0 transparent,
+			4px 4px 0 #002020;
+}
+
+.wrapper div {
+	position: absolute;
+}
+
+.settings, nav {
+	position: fixed;
+	z-index: 9999999;
+	bottom: 0;
+	background: rgba(10,10,10, 0.5);
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	font-size: 20px;
+}
+
+.settings {
+	right: 0;
+	padding: 10px 20px;
+	border-radius: 10px 0 0 0;
+}
+
+.settings a {
+	border: none;
+}
+
+nav {
+	left: 40%;
+	border-radius: 0 10px 0 0;
+}
+
+nav li {
+	float: left;
+}
+
+nav a {
+	display: block;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	border: none;
+	text-align: center;
+	transition: 0.25s;
+}
+
+nav li:last-child a {
+	border-radius: 0 10px 0 0;
+}
+
+nav a:hover {
+	background: rgba(0,153,204, 1);
+}
+
+.sp-canvas {
+	display: none;
+}
+
+.arrow {
+	position: relative;
+	display: inline-block;
+}
+
+.demo { 
+	width: 800px;
+	font-size: 30px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.demo .arrow {
+	font-size: 20px;
+	animation: point-down 0.5s alternate infinite;
+	-webkit-animation: point-down 0.5s alternate infinite;
+}
+
+.description {
+	top: 740px;
+	left: 60px;
+	width: 840px;
+}
+
+.syntax {
+	top: 1580px;
+	left: 30px;
+	width: 900px;
+}
+
+.scrollbar {
+	text-align:right;
+	top: 1590px;
+	left: 1550px;
+	width:800px;
+}
+
+.rotations {
+	left: 2185px;
+	top: 660px;
+	width: 460px;
+	transform: rotate(-90deg) translateY(2.5em);
+	-webkit-transform:rotate(-90deg) translateY(2.5em);
+}
+
+.rotations .upside-down {
+	font-size: 42px;
+	text-align: right;
+	transform: rotate(180deg) translateY(3em);
+	-webkit-transform:rotate(180deg) translateY(3em);
+}
+
+.source {
+	left: 2200px;
+	top: -800px;
+	width: 400px;
+	transform: rotate(90deg) translateX(50px);
+	-webkit-transform:rotate(90deg) translateX(50px)
+}
+
+.follow {
+	width: 900px;
+	left: 900px;
+	top: -750px;
+	transform: rotate(90deg) translateX(50px);
+	-webkit-transform: rotate(90deg) translateX(50px);
+}
+
+.follow .big {
+	font-size: 40px;
+}
+
+.highlight {
+	animation: highlight 0.2s alternate 6 ;
+}
+
+@keyframes point-down {
+	from {
+		top: 0;
+	}
+	to {
+		top: 5px;
+	}
+}
+
+@keyframes highlight {
+	to {
+		background: lightblue;
+	}
+}

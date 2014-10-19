@@ -1,0 +1,201 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<link rel="shortcut icon" href="<?php echo base_url().'static/image/bitbug_favicon (3).ico';?>" type="image/x-icon" /> 
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>首页</title>
+	<script type="text/javascript" src="<?php echo base_url();?>static/js/bgwebsite/change_index.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>static/js/artDialog/artDialog.js?skin=default"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>static/js/artDialog/plugins/iframeTools.js"></script>
+	
+	<style type="text/css">
+	html{
+	overflow-x: hidden; 
+	overflow-y: hidden; 
+	background: #f0f0f0 url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnPg0KCTxkZWZzPg0KCQk8cGF0dGVybiBpZD0ndGlsZScgcGF0dGVyblVuaXRzPSd1c2VyU3BhY2VPblVzZScgd2lkdGg9Jzk4JyBoZWlnaHQ9Jzk4JyB2aWV3Qm94PScwIDAgNTAgNTAnPg0KCQkJPGxpbmUgeDE9JzEnIHkxPScwJyB4Mj0nNTEnIHkyPSc1MCcgc3Ryb2tlPScjMTkyMDNkJyBzdHJva2Utd2lkdGg9JzIuMScvPg0KCQkJPGxpbmUgeDE9JzQ5JyB5MT0nMCcgeDI9Jy0xJyB5Mj0nNTAnIHN0cm9rZT0nIzE5MjAzZCcgc3Ryb2tlLXdpZHRoPScyLjEnLz4NCgkJCTxsaW5lIHgxPSc1MCcgeTE9JzAnIHgyPScwJyB5Mj0nNTAnIHN0cm9rZT0nIzMxMzc2Mycgc3Ryb2tlLXdpZHRoPScyLjEnLz4NCgkJCTxsaW5lIHgxPScwJyB5MT0nMCcgeDI9JzUwJyB5Mj0nNTAnIHN0cm9rZT0nIzMxMzc2Mycgc3Ryb2tlLXdpZHRoPScyLjEnLz4NCgkJPC9wYXR0ZXJuPg0KCQk8cmFkaWFsR3JhZGllbnQgaWQ9J2wnIGN4PSc1MCUnIGN5PScyMDAlJyBmeT0nMCcgcj0nMjAxJSc+DQoJCQk8c3RvcCBvZmZzZXQ9JzAlJyBzdHlsZT0nc3RvcC1jb2xvcjojZmZmOyBzdG9wLW9wYWNpdHk6LjE7JyAvPg0KCQkJPHN0b3Agb2Zmc2V0PScxMCUnIHN0eWxlPSdzdG9wLWNvbG9yOiMwMDA7IHN0b3Atb3BhY2l0eTowLjE7JyAvPg0KCQkJPHN0b3Agb2Zmc2V0PSczMCUnIHN0eWxlPSdzdG9wLWNvbG9yOiMwMDA7IHN0b3Atb3BhY2l0eTowLjM7JyAvPg0KCQkJPHN0b3Agb2Zmc2V0PSc5MCUnIHN0eWxlPSdzdG9wLWNvbG9yOiMwMDA7IHN0b3Atb3BhY2l0eTowLjU1OycgLz4NCgkJCTxzdG9wIG9mZnNldD0nMTAwJScgc3R5bGU9J3N0b3AtY29sb3I6IzAwMDsgc3RvcC1vcGFjaXR5Oi42JyAvPg0KCQk8L3JhZGlhbEdyYWRpZW50Pg0KCTwvZGVmcz4NCgk8cmVjdCBmaWxsPScjMzk0NjZiJyB3aWR0aD0nMTAwJScgaGVpZ2h0PScxMDAlJy8+DQoJPHJlY3QgZmlsbD0ndXJsKCN0aWxlKScgd2lkdGg9JzEwMCUnIGhlaWdodD0nMTAwJScvPg0KCTxyZWN0IHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnIGZpbGw9J3VybCgjbCknLz4NCjwvc3ZnPg==');
+	background-size:100% 10000%;}
+	#apDiv1,#obj1 {
+		position:absolute;
+		left:0px;
+		top:0px;
+		width:100%;
+		height:100%;
+		z-index:1;
+	}
+	#set{position:absolute;z-index:10;left:26px;bottom:26px;}/*按钮样式*/
+	.bgp{
+		position:absolute;
+		width: 270px;
+		left: 50%;
+		top: 20%;
+		margin: 0px 0px 0px -135px;
+		transition: transform 0.5s ease;
+	}
+	.usee{
+		transform: rotateX(90deg);
+	}
+	#bp{
+		visibility:hidden;
+	}
+	#imgb{
+		position:absolute;
+		width:480px;
+		left:50%;
+		top:20%;
+		margin:-20px 0px 0 -240px;}
+	#input_web{
+		width:100%;
+		border:0;
+		background: rgba(0,0,0,.19);
+		border-radius:3px;
+		font-family: '微软雅黑';
+		color:#FFFFFF;
+		padding:0 2px;
+	}
+	#ggbb{
+		position:absolute;
+		width: 480px;
+		height: 30px;
+		left: 50%;
+		top: 50%;
+		margin: -20px 0px 0px -240px;
+		border:1;
+		background:rgba(0,0,0,.19);
+		border-radius:5px;
+		font-family: '微软雅黑';
+		color:#FFFFFF;
+		padding:0 5px;
+	}
+	#ggbb:focus{
+	transition:box-shadow linear .3s;
+	-moz-transition:-moz-box-shadow linear .3s;
+	-webkit-transition:-webkit-box-shadow linear .3s;
+	outline:none;
+	box-shadow:0 2px 10px rgba(69,244,234,1);
+	-moz-box-shadow:0 2px 10px rgba(69,244,234,1);
+	-webkit-box-shadow:0 2px 10px rgba(69,244,234,1);
+	}
+	</style>
+	<link rel="stylesheet" href="<?php echo base_url();?>static/css/path_menu/path_set.css" type="text/css">
+	<link rel="stylesheet" href="<?php echo base_url();?>static/js/noty/buttons.css" type="text/css">
+	<script language="javascript">
+	  //退出登录
+		 function login_out(){
+			noty({
+				text: "退出登录？",
+				type: 'warning',
+				dismissQueue: true,
+				modal: false,
+				maxVisible: 1,
+				timeout: 0,
+				layout: 'bottomCenter',
+				theme: 'defaultTheme',
+				buttons: [
+					{addClass: 'btn btn-primary', text: '按错取消', onClick: function($noty) {
+						$noty.close();
+					  }
+					},
+					{addClass: 'btn btn-danger', text: '确定退出', onClick: function($noty) {
+						parent.window.location="<?php echo site_url("welcome/login_out");?>";
+						$noty.close();
+					  }
+					}
+				  ]
+				});
+		  }
+	  // 嵌入网址
+		function chg(){
+			if (localStorage.page)//localstorage只存字符
+			{
+				document.getElementById("apDiv1").innerHTML='<iframe id="obj1" src="'+localStorage.page+'" ></iframe>';
+				document.getElementById("apDiv1").onmouseover=disp();
+				//document.getElementById("apDiv1").innerHTML='<object id="obj1" type="text/html" data="'+localStorage.page+'" ></object>';
+			}else
+			{}
+		}
+	</script>
+	<script src="<?php echo base_url();?>static/js/path_menu/prefixfree.min.js"></script>
+</head>
+<body onload="chg();checknt();">
+	<!-- 通知 -->
+	<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/2.0.3/jquery-2.0.3.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>static/js/noty/jquery.noty.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>static/js/noty/layouts/topCenter.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>static/js/noty/layouts/bottomCenter.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>static/js/noty/themes/default.js"></script>
+	<!-- 容器 -->
+	<div id="apDiv1">
+		<div id="imgb">
+		<img src="/static/image/google.png" id="gp" class="bgp"></img>
+		<img src="/static/image/baidu.png" id="bp" class="bgp usee"></img></div>
+		<input id="ggbb" value="点击Logo切换搜索引擎" class="input_test"></input>
+		<script type="text/javascript">
+			var iobj=document.getElementById("ggbb");iobj.focus();
+			var imgojg=document.getElementById("gp");
+			var imgojb=document.getElementById("bp");
+			document.getElementById("imgb").onclick=swggbb;
+			var sweb="http://173.194.72.147/#q=";
+			if(!localStorage.iflag){localStorage.iflag=1;}// 1 for google
+			else if(localStorage.iflag==0){
+				imgojb.style.visibility="visible";
+				imgojg.style.visibility="hidden";
+				imgojg.className="bgp usee";
+				imgojb.className="bgp";
+				sweb="http://www.baidu.com/s?wd=";
+			}
+			var fflag=1;
+			iobj.onkeydown=function(event){
+				if(fflag){iobj.value="";fflag=0;}
+				switch(event.keyCode){
+					case 13:window.open(sweb+iobj.value);iobj.value="";break;
+				}/*switch*/
+			}/*onkeydown*/
+			//切换搜索
+			function swggbb(){
+				imgojb.style.visibility="visible";
+				imgojg.style.visibility="visible";
+				if(localStorage.iflag==1){imgojg.className="bgp usee";imgojb.className="bgp";sweb="http://www.baidu.com/s?wd=";localStorage.iflag=0;}
+				else{imgojb.className="bgp usee";imgojg.className="bgp";sweb="http://173.194.72.147/#q=";localStorage.iflag=1;}
+			}
+			//input 输入框获得/失去焦点时隐藏/显示文字
+			$(function(){
+			$('.input_test').bind({
+					focus:function(){
+						if (this.value == this.defaultValue){
+							this.value="";
+						}
+					},
+					blur:function(){
+						if (this.value == ""){
+							this.value = this.defaultValue;
+						}
+					}
+				});
+			})
+		</script>
+	</div>
+	<!-- 按钮 -->
+	<div id="set" >
+	  <div class="flyout-wrap">
+		<a class="flyout-btn" href="#" title="菜单"><span>菜单</span></a>
+		<ul class="flyout flyout-init">
+		  <li id="user" onclick="login_out();"><a href="#"  title="Login"><span>用户</span></a></li>
+		  <li onclick="ts()"><a href="#"  title="一期待的彩蛋"><span>功能</span></a></li>
+		  <?php
+		  
+		  $allow_admin = $this->session->userdata('allow_admin');
+		  if($allow_admin)
+		  	echo "<li><a href='http://optic.sinaapp.com/admin.php/admin/login/show_login'><span>通知</span></a></li>";
+		  else echo "<li onclick='ts()'><a href='#' title='一期待的彩蛋'><span>通知</span></a></li>";
+		  
+		  ?>
+		  
+		  <li onclick="chs()"><a href="#" title="设置"><span id="nopage">设置</span></a></li>
+		  <!-- <li><a href="#"><span>Item</span></a></li> -->
+		  <!-- <li><a href="#"><span>Item</span></a></li> -->
+		</ul><!-- .flyout -->
+	  </div><!-- .flyout-wrap -->
+	</div> 
+	<script type="text/javascript" src="<?php echo base_url();?>static/js/path_menu/index.js"></script>
+	
+</body>
+</html>

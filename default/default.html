@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="default/style/style.css" />
+		<!-- <script type="text/javascript" src="default/script/lib/prefixfree.min.js"></script> -->
+		<script type="text/javascript" src="static/js/bgwebsite/change_index.js"></script>
+		<script type="text/javascript" src="static/js/artDialog/artDialog.js?skin=default"></script>
+		<script type="text/javascript" src="static/js/artDialog/plugins/iframeTools.js"></script>
+		<script type="text/javascript" src="static/js/path_menu/prefixfree.min.js"></script>
+		<link rel="stylesheet" href="static/css/path_menu/path_set.css" type="text/css"> 
+		<style type="text/css">
+		#set{position:absolute;z-index:10;left:26px;bottom:26px;transition: transform 0.2s ease;}/*按钮样式*/
+		.hset{transform: scale(0.001);visibility:hidden;}
+		.flyout-wrap .flyout.expand li:nth-of-type( 1) a span {
+		  animation: spin1-expand_none 1.1s  ease-out 1 backwards; 
+		}
+		</style>
+		
+		<title>撒花欢迎</title>
+	</head>
+	<body>
+		<!-- 欢迎使用-->
+		<nav>
+			<ul>
+				<li><a href="#start">1</a></li>
+				<li><a href="#description">2</a></li>
+				<li><a href="#syntax" >3</a></li>
+				<li><a href="#scrollbar">4</a></li>
+				<li><a href="#rotations">5</a></li>
+				<li><a href="#rotations-rotated">6</a></li>
+				<li><a href="#source">7</a></li>
+				<li><a href="#follow" id="setpath">8</a></li>
+			</ul>
+		</nav>
+		<div class="wrapper">
+			<div class="demo">
+				<h1>感谢各位的支持</h1>
+				<span class="arrow">&darr;</span>现在逐一点击数字了解一下项目吧<span class="arrow">&darr;</span>
+			</div>
+			
+			<div class="description">
+				<span class="big">这是一个对你日常使用没有影响的网页<br />你可以继续沿用你喜欢的网址作为首页</span>
+			</div>
+
+			<div class="syntax">
+				<span class="big">不同的是，<br />&nbsp&nbsp每当你打开首页，<br />&nbsp&nbsp&nbsp&nbsp我们将默默为你检查来自班委们的通知</span>
+			</div>
+
+			<div class="scrollbar">
+				<span class="big">温柔的通知<br />丝毫不影响你的正常使用<br />也不让你错过任何最新的消息</span>
+			</div>
+
+			<div class="rotations">
+				<span class="big">-初测-  欢迎吐槽 ~~</span>
+				<span class="upside-down big">更多功能，敬请期待</span>
+			</div>
+
+			<div class="source">
+				<span class="big">制作来自：<br /><a href="http://weibo.com/enivre" target="_blank">ERVINR</a> & <a href="http://weibo.com/u/2270112551" target="_blank">Baolin</a></span>
+			</div>
+
+			<div class="follow">
+				<span class="big">现在，<br />把这个网页设置为你默认首页，<br />然后点击左下角的按钮马上使用吧~</span>
+				<span class="help">不知道如何设置？<a href="http://www.baidu.com/cache/sethelp/" target="_blank">参考百度</a></span>
+			</div>
+		</div>
+		<script type="text/javascript" src="default/script/lib/jquery-latest.pack.js"></script>
+		<script type="text/javascript" src="default/script/lib/jquery.easing.js"></script>
+		<script type="text/javascript" src="default/script/jquery.scrollpath.js"></script>
+		<script type="text/javascript" src="default/script/demo.js"></script>
+		
+		<!-- 按钮 -->
+		<div id="set" class="hset">
+		  <div class="flyout-wrap">
+			<a class="flyout-btn" href="#" title="菜单"><span>菜单</span></a>
+			<ul class="flyout flyout-init">
+			  <li id="user" onclick="art.dialog.open(' index.php/welcome/login_iframe  ', {title: '登录'});"><a href="#"><span>用户</span></a></li>
+			  <li onclick="ts()"><a href="#"><span>功能</span></a></li>
+			  <li onclick='ts()'><a href='#'><span>通知</span></a></li>
+			  <li onclick="chs()"><a href="#"><span>设置</span></a></li>
+			  <!-- <li><a href="#"><span>Item</span></a></li> -->
+			  <!-- <li><a href="#"><span>Item</span></a></li> -->
+			</ul><!-- .flyout -->
+		  </div><!-- .flyout-wrap -->
+		</div> 
+		<script type="text/javascript" src="static/js/path_menu/index.js"></script>
+	</body>
+</html>

@@ -1,0 +1,635 @@
+p,hr,pre,blockquote,ol,ul,li,dl,dt,dd,a,em,strong,small,s,cite,q,dfn,abbr,time,code,var,i,b,u,span,br,h1,h3,h4,h5,h6 {
+  padding: 0;
+  margin: 0;
+}
+/* :root {
+  padding: 60px;
+  font-family: Helvetica, 'Hiragino Sans GB', Arial, sans-serif;
+  font-smoothing: antialiased;
+  background: #f9f4f0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.testfield {
+  width: 210px;
+  margin: 0 auto;
+}
+h1 {
+  padding: 7px 10px;
+  margin: 20px 0 10px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: rgba(109, 73, 42, 0.8);
+  text-shadow: #fff 0 1px 1px;
+  background: #f1e7de;
+  border: 1px solid #d3bfae;
+  border-radius: 3px;
+  box-shadow: inset #fff 0 1px 0 0;
+}
+h1 a {
+  color: #6d492a;
+  text-decoration: none;
+  border-bottom: 1px dotted #d3bfae;
+}
+h1 a:hover {
+  border-color: #6d492a;
+}
+ */
+ 
+.flyout-wrap {
+  position: relative;
+  height: 191px;
+}
+.flyout-wrap .flyout {
+  position: relative;
+  margin: 0 0 1px 6px;
+  line-height: 0;
+}
+.flyout-wrap .flyout > li {
+  position: absolute;
+  display: block;
+  height: 170px;
+  background: yellow;
+  transform-origin: 12.5px bottom;
+}
+
+/* nth-of-type 表第n个元素 飞出位置角度*/
+.flyout-wrap .flyout > li:nth-of-type( 1) {
+  transform: rotate(0deg);
+}
+.flyout-wrap .flyout > li:nth-of-type( 2) {
+  transform: rotate(30deg);
+}
+.flyout-wrap .flyout > li:nth-of-type( 3) {
+  transform: rotate(60deg);
+}
+.flyout-wrap .flyout > li:nth-of-type( 4) {
+  transform: rotate(90deg);
+}
+/* .flyout-wrap .flyout > li:nth-of-type( 5) {
+  transform: rotate(72deg);
+}
+.flyout-wrap .flyout > li:nth-of-type( 6) {
+  transform: rotate(90deg);
+} */
+
+.flyout-wrap .flyout > li a {
+  position: absolute;
+  display: block;
+  width: 26px;
+  height: 26px;
+  overflow: hidden;
+  text-indent: -99999px;
+  background: #444;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px 0, rgba(0, 0, 0, 0.2) 0 0 0 1px, inset rgba(0, 0, 0, 0.5) 0 0 2px 0;
+}
+.flyout-wrap .flyout > li a:active {
+  background: #000;
+  border-color: #555;
+}
+.flyout-wrap .flyout > li a:active span {
+  opacity: .3;
+}
+/*菜单样式*/
+.flyout-wrap .flyout > li a span {
+  display: block;
+  width: 26px;
+  height: 26px;
+  background-size: 16px 16px;
+}
+.flyout-wrap .flyout > li:nth-of-type( 1) a span {
+	background: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPScxLjAnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgd2lkdGg9JzE2LjAwMDAwMHB0JyBoZWlnaHQ9JzE2LjAwMDAwMHB0JyB2aWV3Qm94PScwIDAgNDAuMDAwMDAwIDQwLjAwMDAwMCcgcHJlc2VydmVBc3BlY3RSYXRpbz0neE1pZFlNaWQgbWVldCc+ICA8ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSgwLjAwMDAwMCw0MC4wMDAwMDApIHNjYWxlKDAuMTAwMDAwLC0wLjEwMDAwMCknIGZpbGw9JyNGRkZGRkYnIHN0cm9rZT0nbm9uZSc+IDxwYXRoIGQ9J00xMzkgMzQxIGMtNDEgLTQxIC00MSAtMTAxIDAgLTE0MiAzOCAtMzggNzQgLTM4IDExMiAwIDQxIDQxIDQxIDEwMSAwIDE0MiAtMTggMTcgLTQwIDI5IC01NiAyOSAtMTYgMCAtMzggLTEyIC01NiAtMjl6Jy8+IDxwYXRoIGQ9J004MyAxMzEgYy01MCAtMjcgLTY2IC01OCAtNDMgLTg3IDE4IC0yMSAyOTIgLTIxIDMxMCAwIDQwIDQ5IC00MSAxMDkgLTE1MSAxMTIgLTU1IDEgLTc2IC0zIC0xMTYgLTI1eicvPiA8L2c+IDwvc3ZnPg==" ) no-repeat center center;
+}
+.flyout-wrap .flyout > li:nth-of-type( 2) a span {
+	background: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPScxLjAnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgd2lkdGg9JzE2LjAwMDAwMHB0JyBoZWlnaHQ9JzE2LjAwMDAwMHB0JyB2aWV3Qm94PScwIDAgNDAuMDAwMDAwIDQwLjAwMDAwMCcgcHJlc2VydmVBc3BlY3RSYXRpbz0neE1pZFlNaWQgbWVldCc+ICA8ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSgwLjAwMDAwMCw0MC4wMDAwMDApIHNjYWxlKDAuMTAwMDAwLC0wLjEwMDAwMCknIGZpbGw9JyNGRkZGRkYnIHN0cm9rZT0nbm9uZSc+IDxwYXRoIGQ9J00xNjMgMzcwIGMtNDggLTE5IC02MyAtNjUgLTYzIC0xODggMCAtMTA3IDEgLTExNCAyNSAtMTM3IDE1IC0xNiAzNiAtMjUgNTUgLTI1IDE5IDAgNDAgOSA1NSAyNSAyNCAyMyAyNSAzMSAyNSAxMzMgMCA5MyAtMyAxMTEgLTE4IDEyNSAtMjQgMjIgLTQ1IDIxIC02NiAtMiAtMjMgLTI1IC0yMCAtMTU2IDQgLTE1NiAxMiAwIDE2IDE1IDE4IDY4IDIgMzcgNyA2NyAxMyA2NyA2IDAgOSAtMzkgNyAtMTAxIC0zIC04NCAtNiAtMTA0IC0yMCAtMTEzIC0xMyAtOCAtMjMgLTggLTM1IDAgLTE1IDkgLTE4IDI5IC0yMSAxMTkgLTIgMTAwIC0xIDExMCAxOSAxMzEgMjggMzAgNjkgMzEgOTcgMSAxNyAtMTggMjIgLTM3IDI0IC05NyAyIC01OSA2IC03NSAxOCAtNzUgMjIgMCAyNiAxMzQgNSAxNzQgLTI2IDUxIC04OCA3MyAtMTQyIDUxeicvPiA8L2c+IDwvc3ZnPg==" ) no-repeat center center;
+}
+.flyout-wrap .flyout > li:nth-of-type( 3) a span {
+	background: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPScxLjAnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgd2lkdGg9JzE2LjAwMDAwMHB0JyBoZWlnaHQ9JzE2LjAwMDAwMHB0JyB2aWV3Qm94PScwIDAgNDAuMDAwMDAwIDQwLjAwMDAwMCcgcHJlc2VydmVBc3BlY3RSYXRpbz0neE1pZFlNaWQgbWVldCc+ICA8ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSgwLjAwMDAwMCw0MC4wMDAwMDApIHNjYWxlKDAuMTAwMDAwLC0wLjEwMDAwMCknIGZpbGw9JyMwMEZGMDAnIHN0cm9rZT0nbm9uZSc+IDxwYXRoIGQ9J001OSAzNTEgYy0yNiAtMjcgLTI5IC0zNiAtMjkgLTk2IDAgLTYwIDMgLTY5IDI5IC05NiAxNiAtMTYgMzkgLTI5IDUwIC0yOSAxNyAwIDIxIC02IDIxIC0zMCAwIC0xOCA1IC0zMCAxMyAtMzAgNyAwIDI2IDEzIDQyIDMwIDI0IDI1IDM2IDMwIDc4IDMwIDQwIDAgNTMgNSA3OCAyOSAyNiAyNyAyOSAzNiAyOSA5NiAwIDYwIC0zIDY5IC0yOSA5NiAtMjkgMjkgLTMxIDI5IC0xNDEgMjkgLTExMCAwIC0xMTIgMCAtMTQxIC0yOXonLz4gPC9nPiA8L3N2Zz4=" ) no-repeat center center;
+}
+.flyout-wrap .flyout > li:nth-of-type( 4) a span {
+	background: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKIHdpZHRoPSIxNnB0IiBoZWlnaHQ9IjE2cHQiIHZpZXdCb3g9IjAgMCA1MTIuMDAwMDAwIDUxMi4wMDAwMDAiCiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCBtZWV0Ij4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMC4wMDAwMDAsNTEyLjAwMDAwMCkgc2NhbGUoMC4xMDAwMDAsLTAuMTAwMDAwKSIKZmlsbD0iI0ZGRkZGRiIgc3Ryb2tlPSJub25lIj4KPHBhdGggZD0iTTM2MjYgNTA4OSBjLTM4NSAtMjEgLTY5OCAtOTUgLTkxMiAtMjE0IC0xODAgLTEwMSAtMzg2IC0zMjEgLTQ4NgotNTE5IC04NSAtMTY5IC0xMjEgLTMyMyAtMTIyIC01MjEgLTEgLTI0MiA2MiAtNDU3IDE4OSAtNjQ1IDIzIC0zNCAzNCAtNTkgMjgKLTY2IC00IC03IC00ODAgLTQ0MCAtMTA1OCAtOTYyIC02NDggLTU4NiAtMTA2NSAtOTcxIC0xMDg4IC0xMDAzIC01NSAtNzYKLTEwNCAtMTg0IC0xMjkgLTI4MCAtMjcgLTEwOSAtMjIgLTI2MSAxMiAtMzU5IDEwMCAtMjg2IDM4NyAtNTAwIDY2OSAtNTAwCjE4MSAxIDM4NiA4NiA1MTkgMjE3IDY1IDY0IDE0ODEgMTYxOCAxNTEwIDE2NTcgMTMgMTcgMzAgNTUgMzggODMgMjIgNzYgMTEKMTMxIC00MiAyMDYgLTE2MiAyMzMgLTMzNiA0OTIgLTM1NCA1MjcgLTE1IDMwIC0xOCA0NiAtMTEgNTMgMTUgMTUgMzUgNCAyNDAKLTEyNSA5NyAtNjEgMjU1IC0xNTkgMzUxIC0yMTggOTYgLTU5IDE5NiAtMTIxIDIyMiAtMTM5IDExOCAtODAgMjk0IC0xNDggNDU1Ci0xNzYgMjk1IC01MSA2MjUgMzAgODcyIDIxNiA5NyA3MiAyNjcgMjQ3IDMxNiAzMjMgMTA2IDE2NiAxNzggMzk5IDIxOSA3MDQKMjIgMTY0IDQxIDYxMCAyNyA2NDUgLTIzIDU4IC0zOCA0NSAtNDExIC0zMjkgLTI0NyAtMjQ3IC0zNjggLTM2MiAtMzk3IC0zNzUKLTc5IC0zNiAtMTk4IC00MCAtMzg4IC0xMyAtMjg1IDQyIC00NDYgODMgLTQ5MiAxMjYgLTQzIDQwIC04NCAyMTYgLTEyMyA1MjMKLTI0IDE4OCAtMjIgMjYwIDEwIDMzMyAxNiAzNiAxMDQgMTMwIDM4NiA0MTIgMzc5IDM4MSAzOTQgMzk5IDMzOCA0MjAgLTI5IDExCi0xNjkgMTEgLTM4OCAtMXogbS0yNjgxIC0zOTcyIGMyOTIgLTEzNSAyNjQgLTU1OSAtNDMgLTY1MyAtMTY3IC01MCAtMzQ0IDMwCi00MTkgMTkxIC00MCA4NiAtNDAgMjA0IDAgMjkwIDYyIDEzMyAxODIgMjA3IDMyNyAyMDIgNTcgLTIgODkgLTkgMTM1IC0zMHoiLz4KPC9nPgo8L3N2Zz4=" ) no-repeat center center;
+}
+
+.flyout-wrap .flyout-init li {
+  display: none;
+}
+.flyout-wrap .flyout li a {
+  top: 150px;
+  animation: contract 0.35s ease-out 1 backwards;
+}
+.flyout-wrap .flyout.expand li a {
+  top: 50px;/*展开扇形位置 150为底部*/
+  animation: expand .6s ease 1 backwards;
+}
+.flyout-wrap .flyout.fade li a.clicked {
+  top: 10px;
+  animation: clicked 0.5s ease-out 1 forwards;
+}
+.flyout-wrap .flyout.fade li a:not(.clicked) {
+  top: 10px;
+  animation: fade 0.5s ease-out 1 forwards;
+}
+.flyout-wrap .flyout.fade li a:not(.clicked) span {
+  opacity: .1;
+  transition: opacity .5s ease;
+}
+
+/**/
+.flyout-wrap .flyout li:nth-of-type( 1) a {
+  animation-delay: 0.2s;
+}
+.flyout-wrap .flyout li:nth-of-type( 1) a:not(.clicked) span {
+  animation: spin1-contract .9s ease-out 1 backwards; 
+}
+.flyout-wrap .flyout.expand li:nth-of-type( 1) a {
+  animation-delay: 0s;
+}
+/*弹出动画*/
+.flyout-wrap .flyout.expand li:nth-of-type( 1) a span {
+  transform: rotate(0deg);
+  animation: spin1-expand_uid 0.6s ease-out 1 backwards; 
+}
+.flyout-wrap .flyout.fade li:nth-of-type( 1) a.clicked span {
+  transform: rotate(0deg);
+}
+/**/
+.flyout-wrap .flyout li:nth-of-type( 2) a {
+  animation-delay: 0.16s;
+}
+.flyout-wrap .flyout li:nth-of-type( 2) a:not(.clicked) span {
+  animation: spin2-contract .9s ease-out 1 backwards;
+}
+.flyout-wrap .flyout.expand li:nth-of-type( 2) a {
+  animation-delay: 0.04s;
+}
+.flyout-wrap .flyout.expand li:nth-of-type( 2) a span {
+  transform: rotate(-18deg);
+  animation: spin2-expand .6s ease-out 1 backwards;
+}
+.flyout-wrap .flyout.fade li:nth-of-type( 2) a.clicked span {
+  transform: rotate(-18deg);
+}
+.flyout-wrap .flyout li:nth-of-type( 3) a {
+  animation-delay: 0.12000000000000001s;
+}
+.flyout-wrap .flyout li:nth-of-type( 3) a:not(.clicked) span {
+  animation: spin3-contract .9s ease-out 1 backwards;
+}
+.flyout-wrap .flyout.expand li:nth-of-type( 3) a {
+  animation-delay: 0.08s;
+}
+.flyout-wrap .flyout.expand li:nth-of-type( 3) a span {
+  transform: rotate(-36deg);
+  animation: spin3-expand .6s ease-out 1 backwards;
+}
+.flyout-wrap .flyout.fade li:nth-of-type( 3) a.clicked span {
+  transform: rotate(-36deg);
+}
+.flyout-wrap .flyout li:nth-of-type( 4) a {
+  animation-delay: 0.08000000000000002s;
+}
+.flyout-wrap .flyout li:nth-of-type( 4) a:not(.clicked) span {
+  animation: spin4-contract .9s ease-out 1 backwards;
+}
+.flyout-wrap .flyout.expand li:nth-of-type( 4) a {
+  animation-delay: 0.12s;
+}
+.flyout-wrap .flyout.expand li:nth-of-type( 4) a span {
+  transform: rotate(-54deg);
+  animation: spin4-expand .6s ease-out 1 backwards;
+}
+.flyout-wrap .flyout.fade li:nth-of-type( 4) a.clicked span {
+  transform: rotate(-54deg);
+}
+/* .flyout-wrap .flyout li:nth-of-type( 5) a {
+  animation-delay: 0.04000000000000001s;
+}
+.flyout-wrap .flyout li:nth-of-type( 5) a:not(.clicked) span {
+  animation: spin5-contract .9s ease-out 1 backwards;
+}
+.flyout-wrap .flyout.expand li:nth-of-type( 5) a {
+  animation-delay: 0.16s;
+}
+.flyout-wrap .flyout.expand li:nth-of-type( 5) a span {
+  transform: rotate(-72deg);
+  animation: spin5-expand .6s ease-out 1 backwards;
+}
+.flyout-wrap .flyout.fade li:nth-of-type( 5) a.clicked span {
+  transform: rotate(-72deg);
+}
+.flyout-wrap .flyout li:nth-of-type( 6) a {
+  animation-delay: 0s;
+}
+.flyout-wrap .flyout li:nth-of-type( 6) a:not(.clicked) span {
+  animation: spin6-contract .9s ease-out 1 backwards;
+}
+.flyout-wrap .flyout.expand li:nth-of-type( 6) a {
+  animation-delay: 0.2s;
+}
+.flyout-wrap .flyout.expand li:nth-of-type( 6) a span {
+  transform: rotate(-90deg);
+  animation: spin6-expand .6s ease-out 1 backwards;
+}
+.flyout-wrap .flyout.fade li:nth-of-type( 6) a.clicked span {
+  transform: rotate(-90deg);
+}
+ */
+
+.flyout-wrap .flyout-btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  width: 36px;
+  height: 36px;
+  overflow: hidden;
+  text-indent: -99999px;
+  background: #f76f54;
+  background: linear-gradient(top, #f76f54 0, #dd3535 49%, #d32121 51%, #c61f1f 100%);
+  border: 4px solid #fff;
+  border-radius: 50%;
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 3px 8px 0, rgba(0, 0, 0, 0.2) 0 0 0 1px, inset rgba(0, 0, 0, 0.3) 0 0 0 1px, inset rgba(255, 255, 255, 0.3) 0 1px 0 1px;
+}
+.flyout-wrap .flyout-btn span {
+  display: block;
+  width: 36px;
+  height: 36px;
+				/*cross*/
+  /* background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='20px'><g><path fill='#fff' d='M20,11.402c0,0.453-0.367,0.82-0.822,0.82H0.82c-0.453,0-0.82-0.367-0.82-0.82V8.598 c0-0.454,0.367-0.821,0.82-0.821h18.357C19.633,7.776,20,8.144,20,8.598V11.402z'/><path fill='#fff' d='M8.598,20c-0.453,0-0.821-0.367-0.821-0.82V0.821c0-0.452,0.368-0.82,0.821-0.82h2.804 c0.453,0,0.82,0.368,0.82,0.82V19.18c0,0.453-0.367,0.82-0.82,0.82H8.598z'/></g></svg>") no-repeat center center; */
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyMHB4JyBoZWlnaHQ9JzIwcHgnPjxnPjxwYXRoIGZpbGw9JyNmZmYnIGQ9J00yMCwxMS40MDJjMCwwLjQ1My0wLjM2NywwLjgyLTAuODIyLDAuODJIMC44MmMtMC40NTMsMC0wLjgyLTAuMzY3LTAuODItMC44MlY4LjU5OCBjMC0wLjQ1NCwwLjM2Ny0wLjgyMSwwLjgyLTAuODIxaDE4LjM1N0MxOS42MzMsNy43NzYsMjAsOC4xNDQsMjAsOC41OThWMTEuNDAyeicvPjxwYXRoIGZpbGw9JyNmZmYnIGQ9J004LjU5OCwyMGMtMC40NTMsMC0wLjgyMS0wLjM2Ny0wLjgyMS0wLjgyVjAuODIxYzAtMC40NTIsMC4zNjgtMC44MiwwLjgyMS0wLjgyaDIuODA0IGMwLjQ1MywwLDAuODIsMC4zNjgsMC44MiwwLjgyVjE5LjE4YzAsMC40NTMtMC4zNjcsMC44Mi0wLjgyLDAuODJIOC41OTh6Jy8+PC9nPjwvc3ZnPg==") no-repeat center center;
+  transition: transform .4s ease; /* 绑定transform变换 */
+}
+/*主按钮动画*//*flyout-wrap下的flyout-btn且btn-rotate，删除类时旋回*/
+.flyout-wrap .flyout-btn.btn-rotate span {
+  transform: rotate(-180deg) scale(1.3);
+}
+
+/* .flyout-wrap .ani-expand 0% {
+  top: 150px;
+}
+.flyout-wrap .ani-expand 50% {
+  top: -10px;
+}
+.flyout-wrap .ani-expand 70% {
+  top: 15px;
+}
+.flyout-wrap .ani-expand 100% {
+  top: 10px;
+} */
+/* .flyout-wrap .ani-contract 0% {
+  top: 10px;
+}
+.flyout-wrap .ani-contract 40% {
+  top: -25px;
+}
+.flyout-wrap .ani-contract 100% {
+  top: 150px;
+}
+.flyout-wrap .ani-clicked 0% {
+  opacity: 1;
+  transform: scale(1);
+}
+.flyout-wrap .ani-clicked 100% {
+  opacity: 0;
+  transform: scale(5);
+} */
+/*菜单弹出收回扇形*/
+@keyframes expand {
+  0% {
+    top: 150px;
+  }
+  50% {
+    top: 30px;
+  }
+  70% {
+    top: 60px;
+  }
+  100% {
+    top: 50px;
+  }
+}
+@keyframes contract {
+  0% {
+    top: 50px;
+  }
+  40% {
+    top: 15px;
+  }
+  100% {
+    top: 150px;
+  }
+}
+/*点击放大其他消失*/
+@keyframes clicked {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    top: 50px;
+  }
+  90% {
+    top: 50px;
+  }
+  99% {
+    transform: scale(2);
+    opacity: 0;
+    top: 150px;
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes fade {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    top: 50px;
+  }
+  90% {
+    opacity: 0;
+    top: 50px;
+  }
+  99% {
+    transform: scale(0);
+    top: 150px;
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+/* .flyout-wrap .ani-spin1-expand 0% {
+  transform: rotate(0deg);
+}
+.flyout-wrap .ani-spin1-expand 60% {
+  transform: rotate(-360deg);
+}
+.flyout-wrap .ani-spin1-expand 100% {
+  transform: rotate(-360deg);
+}
+.flyout-wrap .ani-spin2-expand 0% {
+  transform: rotate(-18deg);
+}
+.flyout-wrap .ani-spin2-expand 60% {
+  transform: rotate(-378deg);
+}
+.flyout-wrap .ani-spin2-expand 100% {
+  transform: rotate(-378deg);
+}
+.flyout-wrap .ani-spin3-expand 0% {
+  transform: rotate(-36deg);
+}
+.flyout-wrap .ani-spin3-expand 60% {
+  transform: rotate(-396deg);
+}
+.flyout-wrap .ani-spin3-expand 100% {
+  transform: rotate(-396deg);
+}
+.flyout-wrap .ani-spin4-expand 0% {
+  transform: rotate(-54deg);
+}
+.flyout-wrap .ani-spin4-expand 60% {
+  transform: rotate(-414deg);
+}
+.flyout-wrap .ani-spin4-expand 100% {
+  transform: rotate(-414deg);
+}
+.flyout-wrap .ani-spin5-expand 0% {
+  transform: rotate(-72deg);
+}
+.flyout-wrap .ani-spin5-expand 60% {
+  transform: rotate(-432deg);
+}
+.flyout-wrap .ani-spin5-expand 100% {
+  transform: rotate(-432deg);
+}
+.flyout-wrap .ani-spin6-expand 0% {
+  transform: rotate(-90deg);
+}
+.flyout-wrap .ani-spin6-expand 60% {
+  transform: rotate(-450deg);
+}
+.flyout-wrap .ani-spin6-expand 100% {
+  transform: rotate(-450deg);
+}
+.flyout-wrap .ani-spin1-contract 0% {
+  transform: rotate(0deg);
+}
+.flyout-wrap .ani-spin1-contract 50% {
+  transform: rotate(360deg);
+}
+.flyout-wrap .ani-spin1-contract 100% {
+  transform: rotate(360deg);
+}
+.flyout-wrap .ani-spin2-contract 0% {
+  transform: rotate(-18deg);
+}
+.flyout-wrap .ani-spin2-contract 50% {
+  transform: rotate(360deg);
+}
+.flyout-wrap .ani-spin2-contract 100% {
+  transform: rotate(360deg);
+}
+.flyout-wrap .ani-spin3-contract 0% {
+  transform: rotate(-36deg);
+}
+.flyout-wrap .ani-spin3-contract 50% {
+  transform: rotate(360deg);
+}
+.flyout-wrap .ani-spin3-contract 100% {
+  transform: rotate(360deg);
+}
+.flyout-wrap .ani-spin4-contract 0% {
+  transform: rotate(-54deg);
+}
+.flyout-wrap .ani-spin4-contract 50% {
+  transform: rotate(360deg);
+}
+.flyout-wrap .ani-spin4-contract 100% {
+  transform: rotate(360deg);
+}
+.flyout-wrap .ani-spin5-contract 0% {
+  transform: rotate(-72deg);
+}
+.flyout-wrap .ani-spin5-contract 50% {
+  transform: rotate(360deg);
+}
+.flyout-wrap .ani-spin5-contract 100% {
+  transform: rotate(360deg);
+}
+.flyout-wrap .ani-spin6-contract 0% {
+  transform: rotate(-90deg);
+}
+.flyout-wrap .ani-spin6-contract 50% {
+  transform: rotate(360deg);
+}
+.flyout-wrap .ani-spin6-contract 100% {
+  transform: rotate(360deg);
+}
+ *//*菜单按钮弹出动画*/
+@keyframes spin1-expand_none {
+  0% {
+    transform: rotate(0deg);
+  }
+  27% {
+    transform: rotate(-360deg);
+  }
+  73%{
+	transform: rotate(-360deg);
+  }
+  100% {
+    transform: rotate(-720deg);
+  }
+}
+@keyframes spin1-expand_uid {
+  0% {
+    transform: rotate(0deg);
+  }
+  36% {
+    transform: rotate(-360deg);
+  }
+  100%{
+	transform: rotate(-360deg);
+  }
+}
+@keyframes spin2-expand {
+  0% {
+    transform: rotate(-18deg);
+  }
+  60% {
+    transform: rotate(-378deg);
+  }
+  100% {
+    transform: rotate(-378deg);
+  }
+}
+@keyframes spin3-expand {
+  0% {
+    transform: rotate(-36deg);
+  }
+  60% {
+    transform: rotate(-396deg);
+  }
+  100% {
+    transform: rotate(-396deg);
+  }
+}
+@keyframes spin4-expand {
+  0% {
+    transform: rotate(-54deg);
+  }
+  60% {
+    transform: rotate(-414deg);
+  }
+  100% {
+    transform: rotate(-414deg);
+  }
+}
+@keyframes spin4-expand_nopage {
+  0% {
+    transform: rotate(-54deg);
+  }
+  25% {
+    transform: rotate(-414deg);
+  }
+  50% {
+    transform: rotate(-414deg);
+  }
+  75%{
+	transform: rotate(-414deg);
+  }
+  100%{
+  tranform: rotate(-774deg);
+  }
+}
+
+@keyframes spin5-expand {
+  0% {
+    transform: rotate(-72deg);
+  }
+  60% {
+    transform: rotate(-432deg);
+  }
+  100% {
+    transform: rotate(-432deg);
+  }
+}
+@keyframes spin6-expand {
+  0% {
+    transform: rotate(-90deg);
+  }
+  60% {
+    transform: rotate(-450deg);
+  }
+  100% {
+    transform: rotate(-450deg);
+  }
+}
+
+@keyframes spin1-contract {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin2-contract {
+  0% {
+    transform: rotate(-18deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin3-contract {
+  0% {
+    transform: rotate(-36deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin4-contract {
+  0% {
+    transform: rotate(-54deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin5-contract {
+  0% {
+    transform: rotate(-72deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin6-contract {
+  0% {
+    transform: rotate(-90deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
