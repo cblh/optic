@@ -1,1 +1,0 @@
-a:9:{s:12:"cfg_keywords";s:6:"王建";s:9:"cfg_beian";s:6:"暂无";s:11:"cfg_powerby";s:12:"版权所有";s:14:"cfg_medias_dir";s:6:"upload";s:11:"cfg_webname";s:12:"个人网站";s:12:"cfg_basehost";s:8:"57sy.com";s:15:"cfg_description";s:21:"站点，个人网站";s:10:"cfg_isopen";s:1:"1";s:14:"cfg_close_info";s:30:"网站升级，服务器维护";}
